@@ -41,6 +41,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -57,6 +58,7 @@ import com.example.chatappclone.ui.theme.Tertiary
 import com.example.chatappclone.ui.theme.Text2
 
 import com.example.chatappclone.util.Helper
+import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 @Preview
 @Composable
@@ -118,11 +120,27 @@ fun SignupScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(42.dp))
-        Image(
-            painter = painterResource(id = R.drawable.logo),
-            contentDescription = "Super app logo",
-            Modifier.height(100.dp)
-        )
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = "Super app logo",
+                modifier = Modifier
+                    .height(100.dp)
+                    .fillMaxWidth()
+            )
+            Text(
+                text = "Welcome !",
+                modifier = Modifier
+                    .padding(8.dp),
+                style = TextStyle(
+                    fontSize = 30.sp,
+                    textAlign = TextAlign.Center // Center the text horizontally
+                )
+            )
+        }
         Spacer(modifier = Modifier.height(42.dp))
         TextField(value = firstName.value,
             modifier = Modifier.fillMaxWidth().focusRequester(focusRequester),
@@ -259,16 +277,16 @@ fun SignupScreen(navController: NavController) {
             ),
             textStyle = TextStyle(fontSize = 16.sp),
             visualTransformation = if (passwordVisibility.value) VisualTransformation.None else PasswordVisualTransformation(),
-            trailingIcon = {
-                val image = if (passwordVisibility.value) R.drawable.password_toggle_hide
-                else R.drawable.password_toggle
-
-                val description = if (passwordVisibility.value) "Hide password" else "Show password"
-
-                IconButton(onClick = { passwordVisibility.value = !passwordVisibility.value }) {
-                    Icon(painter = painterResource(id = image), description, tint = Black20)
-                }
-            },
+//            trailingIcon = {
+//                val image = if (passwordVisibility.value) R.drawable.password_toggle_hide
+//                else R.drawable.password_toggle
+//
+//                val description = if (passwordVisibility.value) "Hide password" else "Show password"
+//
+//                IconButton(onClick = { passwordVisibility.value = !passwordVisibility.value }) {
+//                    Icon(painter = painterResource(id = image), description, tint = Black20)
+//                }
+//            },
             isError = passwordError.value,
             supportingText = {
                 if (passwordError.value) Text(
