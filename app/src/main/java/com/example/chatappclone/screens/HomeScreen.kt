@@ -52,6 +52,7 @@ import coil.decode.ImageDecoderDecoder
 import com.example.chatappclone.R
 import com.example.chatappclone.model.Message
 import com.example.chatappclone.model.User
+import com.example.chatappclone.ui.theme.Black20
 import com.example.chatappclone.ui.theme.Blue
 import com.example.chatappclone.ui.theme.Primary
 import com.example.chatappclone.ui.theme.Secondary
@@ -353,12 +354,12 @@ fun HomeTopBar(navController: NavController) {
                 .clickable { navController.navigate("profile") }
         )
         val focus = true
-        Image(painter = painterResource(id = R.drawable.logo), contentDescription = "")
+        //Image(painter = painterResource(id = R.drawable.logo), contentDescription = "")
         Box(modifier = Modifier.padding(2.dp)) {
             Icon(
                 painter = painterResource(id = R.drawable.search),
                 contentDescription = "Search button",
-                tint = Text2,
+                tint = Black20,
                 modifier = Modifier
                     .border(0.5.dp, Text2, RoundedCornerShape(50))
                     .clickable { navController.navigate("search/$focus") }

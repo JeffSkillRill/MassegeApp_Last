@@ -95,7 +95,7 @@ fun LoginScreen(navController: NavController) {
             onValueChange = { username.value = it.trim() },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-            shape = RoundedCornerShape(16.dp),
+            shape = RoundedCornerShape(5.dp),
             placeholder = { Text(text = "Username", fontSize = 14.sp) },
             leadingIcon = {
                 Icon(
@@ -120,7 +120,7 @@ fun LoginScreen(navController: NavController) {
             onValueChange = { password.value = it.trim() },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            shape = RoundedCornerShape(16.dp),
+            shape = RoundedCornerShape(5.dp),
             placeholder = { Text(text = "Password", fontSize = 14.sp) },
             leadingIcon = {
                 Icon(
@@ -169,7 +169,7 @@ fun LoginScreen(navController: NavController) {
                 }
 
             },
-            shape = RoundedCornerShape(16.dp),
+            shape = RoundedCornerShape(5.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Tertiary, disabledContainerColor = Secondary),
             modifier = Modifier
                 .fillMaxWidth()
@@ -187,8 +187,8 @@ fun LoginScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(12.dp))
         Button(
             onClick = { navController.navigate("signup") },
-            shape = RoundedCornerShape(16.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Green),
+            shape = RoundedCornerShape(5.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Tertiary),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 62.dp)

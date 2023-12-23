@@ -2,8 +2,8 @@ package com.example.chatappclone.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Primary = Color(0xFFFFFFFF)
-val Secondary = Color(0xFFCECECE)
+val Primary = Color(0xFF008D0E)
+val Secondary = Color(0xFF1AFF00)
 val Gray = Color(0xFF000000)
 val Back = Color(0x99000000)
 val Back1 = Color(0xFF000000)
