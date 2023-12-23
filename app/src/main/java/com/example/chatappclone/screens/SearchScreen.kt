@@ -136,7 +136,7 @@ fun SearchField(
             .fillMaxWidth()
             .padding(16.dp)
             .focusRequester(focusRequester),
-        shape = RoundedCornerShape(24.dp),
+        shape = RoundedCornerShape(5.dp),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
         colors = TextFieldDefaults.outlinedTextFieldColors(
             Text2,
